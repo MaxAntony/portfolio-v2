@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Layout } from '@layout/Layout';
+import { Pages } from '@pages/Pages';
+import { createContext, Dispatch, SetStateAction, useContext, useEffect, useState } from 'react';
+import { pages } from './data';
 
-function App() {
+const preloader = document.getElementById('preloader')!;
+preloader.addEventListener('transitionend', (e) => {
+  preloader.remove();
+});
+
+type GlobalContent = {
+  page: string;
+  setPage: Dispatch<SetStateAction<pages>>;
+};
+
+const GlobalContext = createContext<GlobalContent>({ page: pages.home, setPage: () => {} });
+
+export const useGlobalContext = () => useContext(GlobalContext);
+
+export function App() {
+  const [page, setPage] = useState(pages.home);
+
+  useEffect(() => {
+    setTimeout(() => {
+      preloader.style.opacity = '0';
+    }, 500);
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalContext.Provider value={{ page, setPage }}>
+      <Layout>
+        <Pages />
+      </Layout>
+    </GlobalContext.Provider>
   );
 }
-
-export default App;
