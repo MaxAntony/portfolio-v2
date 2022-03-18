@@ -7,7 +7,7 @@ export const Footer = () => {
       <div>
         <Copyright />
       </div>
-      <div className='flex w-32 justify-between'>
+      <div className='flex w-40 justify-between'>
         <SocialLinks />
       </div>
     </div>

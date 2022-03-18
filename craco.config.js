@@ -1,6 +1,15 @@
 const CracoAlias = require('craco-alias');
 
 module.exports = {
+  // webpack: {
+  //   configure: (webpackConfig, { env, paths }) => {
+  //     webpackConfig.externals = {
+  //       react: 'React',
+  //       'react-dom': 'ReactDOM',
+  //     };
+  //     return webpackConfig;
+  //   },
+  // },
   plugins: [
     {
       plugin: CracoAlias,

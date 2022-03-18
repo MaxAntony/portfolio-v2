@@ -4,12 +4,12 @@ import { createContext, Dispatch, SetStateAction, useContext, useEffect, useStat
 import { pages } from './data';
 
 const preloader = document.getElementById('preloader')!;
-preloader.addEventListener('transitionend', (e) => {
+preloader.addEventListener('transitionend', (_) => {
   preloader.remove();
 });
 
 type GlobalContent = {
-  page: string;
+  page: pages;
   setPage: Dispatch<SetStateAction<pages>>;
 };
 

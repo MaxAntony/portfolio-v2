@@ -1,19 +1,26 @@
+import { links } from '@root/data';
 import { Fragment } from 'react';
-import { FaWhatsapp, FaLinkedin, FaGithubAlt } from 'react-icons/fa';
-import { FiMail } from 'react-icons/fi';
+import { FaLinkedin, FaGithubAlt } from 'react-icons/fa';
+import { IoMdMail, IoLogoWhatsapp } from 'react-icons/io';
 
 const authorLinks: { url: string; icon: JSX.Element; title: string }[] = [
-  { url: '', icon: <FaWhatsapp />, title: 'whatsapp' },
-  { url: '', icon: <FiMail />, title: 'correo' },
-  { url: '', icon: <FaLinkedin />, title: 'linkedin' },
-  { url: '', icon: <FaGithubAlt />, title: 'github' },
+  { url: links.whatsapp, icon: <IoLogoWhatsapp />, title: 'whatsapp' },
+  { url: links.email, icon: <IoMdMail />, title: 'correo' },
+  { url: links.linkedin, icon: <FaLinkedin />, title: 'linkedin' },
+  { url: links.github, icon: <FaGithubAlt />, title: 'github' },
 ];
 
 export const SocialLinks = () => {
   return (
     <Fragment>
       {authorLinks.map((link, i) => (
-        <a href={link.url} key={i} className=' text-lg last:pr-0' rel='noreferrer' target='_blank' title={link.title}>
+        <a
+          href={link.url}
+          key={i}
+          className=' text-xl text-fontsoft transition-all duration-300 hover:-translate-y-1 hover:text-black '
+          rel='noreferrer'
+          target='_blank'
+          title={link.title}>
           {link.icon}
         </a>
       ))}

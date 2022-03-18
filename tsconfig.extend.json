@@ -25,6 +25,8 @@
       "@constants/*": ["./src/utils/constants/*"],
       "@helpers": ["./src/utils/helpers"],
       "@helpers/*": ["./src/utils/helpers/*"],
+      "@images/*": ["./src/assets/images/*"],
+      "@images": ["./src/assets/images"],
       "@root/*": ["./src/*"]
     }
   }

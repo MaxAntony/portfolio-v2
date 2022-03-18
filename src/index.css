@@ -18,6 +18,7 @@ body {
   background-color: #f6fbff;
   color: #333;
   width: 100%;
+  box-sizing: border-box;
 }
 
 #root {

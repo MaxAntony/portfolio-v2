@@ -52,14 +52,15 @@ export const Navbar = () => {
             }`}></div>
         </button>
       </div>
+      {/* MOVIL */}
       <div
-        className={`bg-white z-10 pt-20 px-5 flex flex-col items-end fixed w-48 top-14 lg:top-16 h-screen transition-all ${
+        className={`bg-white pt-20 px-5 flex flex-col items-end fixed w-48 top-14 lg:top-16 h-screen transition-all z-20 border-l ${
           menuOpen ? 'right-0' : '-right-48'
         }`}>
         <img src={image} alt='avatar' className='w-20 h-20 object-cover mb-14' />
         <ul className='mb-14'>
           {pagesSpanish.map(({ name, path }) => (
-            <li key={path} className='mb-2 cursor-pointer' onClick={changePage(path)}>
+            <li key={path} className='mb-4 cursor-pointer' onClick={changePage(path)}>
               {name}
             </li>
           ))}
