@@ -1,13 +1,13 @@
 import { PageWrapper } from '@common/PageWrapper';
 import { image, pages } from '@root/data';
-import { VFC } from 'react';
 import { About } from './About';
 import { Contact } from './Contact';
 import { Home } from './Home';
 import { Portfolio } from './Portfolio';
 
-export const Pages: VFC = () => {
-  const pageElements = [
+export const Pages = () => {
+  type PageElement = { element: JSX.Element; path: pages };
+  const pageElements: PageElement[] = [
     { element: <Home />, path: pages.home },
     { element: <About />, path: pages.about },
     { element: <Portfolio />, path: pages.portfolio },

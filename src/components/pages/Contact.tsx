@@ -24,7 +24,7 @@ const data: CardProps[] = [
   { Icon: IoLogoWhatsapp, content: '+51 997 286 267', link: links.whatsapp },
 ];
 
-export const Contact: VFC = () => {
+export const Contact = () => {
   return (
     <div className='px-5 pt-14 lg:px-24 lg:pt-24'>
       <Section title='Contacto'>
