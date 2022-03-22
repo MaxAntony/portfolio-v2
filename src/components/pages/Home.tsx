@@ -1,12 +1,8 @@
-// import { pages } from '@root/data';
-// import { useGlobalContext } from '@root/state/context/state.context';
-
-import { modalState } from '@root/state/recoil/state.recoil';
-import { useRecoilState } from 'recoil';
+import { pages } from '@root/data';
+import { useGlobalContext } from '@root/state/context/state.context';
 
 export const Home = () => {
-  // const { setPage } = useGlobalContext();
-  const [, setModal] = useRecoilState(modalState);
+  const { setPage } = useGlobalContext();
 
   return (
     <div className={`absolute top-0 bottom-0 flex pl-5 lg:pl-24`}>
@@ -23,8 +19,7 @@ export const Home = () => {
               href='/'
               onClick={(e) => {
                 e.preventDefault();
-                setModal(true);
-                // setPage(pages.contact);
+                setPage(pages.contact);
               }}>
               contacto
             </a>

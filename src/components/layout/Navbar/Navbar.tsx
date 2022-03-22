@@ -18,7 +18,7 @@ export const Navbar = () => {
 
   return (
     <Fragment>
-      <div className='fixed top-0 left-0 right-0 flex h-14 items-center justify-end bg-white px-5 lg:h-16 lg:px-16'>
+      <div className='fixed top-0 left-0 right-0 z-30 flex h-14 items-center justify-end bg-white px-5 lg:h-16 lg:px-16'>
         {/* <a href='/' className='flex items-center'>
           <img className='max-w-[100px] max-h-10' src={logoImg} alt='logo' />
         </a> */}
@@ -53,6 +53,12 @@ export const Navbar = () => {
         </button>
       </div>
       {/* MOVIL */}
+      <div
+        className={`fixed inset-0 z-20 bg-black transition-opacity duration-300 ease-in-out ${
+          menuOpen ? 'opacity-50' : ' pointer-events-none opacity-0'
+        } `}
+        onClick={() => setMenuOpen(false)}
+      />
       <div
         className={`fixed top-14 z-20 flex h-screen w-48 flex-col items-end border-l bg-white px-5 pt-20 transition-all lg:top-16 ${
           menuOpen ? 'right-0' : '-right-48'

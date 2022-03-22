@@ -1,8 +1,9 @@
 import { FC, Fragment, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { GrClose } from 'react-icons/gr';
 
-type props = { open: boolean; onClose: () => void };
-export const Modal: FC<props> = ({ children, onClose, open }) => {
+type props = { open: boolean; onClose: () => void; title: string };
+export const Modal: FC<props> = ({ children, onClose, open, title }) => {
   function escHandler({ key }: KeyboardEvent) {
     if (key === 'Escape') onClose();
   }
@@ -19,7 +20,7 @@ export const Modal: FC<props> = ({ children, onClose, open }) => {
     };
   });
 
-  const transition = 'transition-opacity duration-300 ease-in-out';
+  const transition = 'transition-all duration-300 ease-in-out';
 
   if (typeof document !== 'undefined') {
     return createPortal(
@@ -32,13 +33,14 @@ export const Modal: FC<props> = ({ children, onClose, open }) => {
 
         {/* content */}
         <div
-          className={`fixed right-0 h-full w-full max-w-screen-sm bg-white p-4 shadow-lg ${
+          className={`fixed right-4 left-4 top-4 bottom-4 bg-white shadow-lg ${
             open ? 'opacity-100' : 'pointer-events-none opacity-0'
           } ${transition}`}>
-          <div>
-            <button onClick={onClose}>Click to close modal</button>
+          <div className='flex items-center justify-between border-b p-4 text-lg font-bold'>
+            <div>{title}</div>
+            <GrClose onClick={onClose} className='cursor-pointer text-2xl font-black' />
           </div>
-          {children}
+          <div className='mx-4 flex h-full flex-col overflow-y-scroll py-4'>{children}</div>
         </div>
       </div>,
       document.body,

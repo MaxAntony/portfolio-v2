@@ -31,6 +31,7 @@ export function App() {
           <Pages />
         </Layout>
         <Modal
+          title='tutolo de ejemplo'
           onClose={() => {
             setIsModalOpen(false);
           }}

@@ -1,11 +1,14 @@
 import { Section } from '@common/SectionLine';
 import { pagesSpanish, proyects } from '@root/data';
+import { modalState } from '@root/state/recoil/state.recoil';
 import { IProyect } from '@ts/interfaces';
 import { VFC } from 'react';
+import { useRecoilState } from 'recoil';
 
 type ProyectProps = { proyect: IProyect };
 const Proyect: VFC<ProyectProps> = ({ proyect }) => {
   // para mejorar https://jsfiddle.net/ch9ukp3v/
+  const [_, setModal] = useRecoilState(modalState);
   return (
     <div className='group mb-24'>
       <div className='grid grid-cols-11 items-center gap-2'>
@@ -18,7 +21,9 @@ const Proyect: VFC<ProyectProps> = ({ proyect }) => {
           <div className='mb-8 cursor-pointer rounded bg-white p-4 text-fontsoft shadow-md hover:bg-gray-50'>
             <p>{proyect.description}</p>
           </div>
-          <button className='border-2 border-gray-700 p-2 transition duration-300 hover:bg-gray-700 hover:text-white'>
+          <button
+            className='border-2 border-gray-700 p-2 transition duration-300 hover:bg-gray-700 hover:text-white'
+            onClick={() => setModal(true)}>
             ver mas
           </button>
         </div>
