@@ -7,18 +7,18 @@ type ProyectProps = { proyect: IProyect };
 const Proyect: VFC<ProyectProps> = ({ proyect }) => {
   // para mejorar https://jsfiddle.net/ch9ukp3v/
   return (
-    <div className='mb-24 group'>
-      <div className='grid grid-cols-11 gap-2 items-center'>
+    <div className='group mb-24'>
+      <div className='grid grid-cols-11 items-center gap-2'>
         <div
-          className='col-start-1 col-end-12 lg:col-start-6 lg:col-end-[-1] lg:row-start-1 lg:row-end-[-1] w-full h-96 grayscale bg-cover bg-center hover:grayscale-0 transition-all duration-500 border rounded shadow lg:group-odd:col-start-1 lg:group-odd:col-end-8'
+          className='col-start-1 col-end-12 h-96 w-full rounded border bg-cover bg-center shadow grayscale transition-all duration-500 hover:grayscale-0 lg:col-start-6 lg:col-end-[-1] lg:row-start-1 lg:row-end-[-1] lg:group-odd:col-start-1 lg:group-odd:col-end-8'
           style={{ backgroundImage: `url(${proyect.image})` }}
         />
-        <div className='col-start-1 col-end-12 lg:col-start-1 lg:col-end-[7] lg:row-start-1 lg:row-end-[-1] z-10 lg:group-odd:text-right lg:group-odd:col-start-7 lg:group-odd:col-end-[-1]'>
-          <h5 className='text-gray-700 text-2xl font-bold mb-2'>{proyect.title}</h5>
-          <div className='text-fontsoft bg-white shadow-md hover:bg-gray-50 mb-8 cursor-pointer p-4 rounded'>
+        <div className='z-10 col-start-1 col-end-12 lg:col-start-1 lg:col-end-[7] lg:row-start-1 lg:row-end-[-1] lg:group-odd:col-start-7 lg:group-odd:col-end-[-1] lg:group-odd:text-right'>
+          <h5 className='mb-2 text-2xl font-bold text-gray-700'>{proyect.title}</h5>
+          <div className='mb-8 cursor-pointer rounded bg-white p-4 text-fontsoft shadow-md hover:bg-gray-50'>
             <p>{proyect.description}</p>
           </div>
-          <button className='border-2 p-2 border-gray-700 transition duration-300 hover:text-white hover:bg-gray-700'>
+          <button className='border-2 border-gray-700 p-2 transition duration-300 hover:bg-gray-700 hover:text-white'>
             ver mas
           </button>
         </div>
@@ -29,7 +29,7 @@ const Proyect: VFC<ProyectProps> = ({ proyect }) => {
 
 export const Portfolio = () => {
   return (
-    <div className='pt-14 px-5 lg:pt-24 lg:px-24'>
+    <div className='px-5 pt-14 lg:px-24 lg:pt-24'>
       <Section title={pagesSpanish[2].name}>
         {proyects.map((proyect, i) => (
           <Proyect proyect={proyect} key={i} />

@@ -1,25 +1,30 @@
-import { useGlobalContext } from '@root/App';
-import { pages } from '@root/data';
+// import { pages } from '@root/data';
+// import { useGlobalContext } from '@root/state/context/state.context';
+
+import { modalState } from '@root/state/recoil/state.recoil';
+import { useRecoilState } from 'recoil';
 
 export const Home = () => {
-  const { setPage } = useGlobalContext();
+  // const { setPage } = useGlobalContext();
+  const [, setModal] = useRecoilState(modalState);
 
   return (
-    <div className={`absolute top-0 bottom-0 pl-5 lg:pl-24 flex`}>
+    <div className={`absolute top-0 bottom-0 flex pl-5 lg:pl-24`}>
       <div className='flex items-center'>
-        <div className='flex flex-col group'>
-          <h3 className='text-4xl xl:text-7xl mb-6 font-bold'>Max Antony</h3>
-          <span className='bg-gray-700 w-10 lg:w-16 h-1 mb-6 group-hover:w-full transition-[width] duration-500'></span>
-          <p className='text-xl text-gray-700 mb-7'>
+        <div className='group flex flex-col'>
+          <h3 className='mb-6 text-4xl font-bold xl:text-7xl'>Max Antony</h3>
+          <span className='mb-6 h-1 w-10 bg-gray-700 transition-[width] duration-500 group-hover:w-full lg:w-16'></span>
+          <p className='mb-7 text-xl text-gray-700'>
             Desarrollador <span className='font-bold'>Web</span>
           </p>
           <div className='uppercase '>
             <a
-              className='inline-block text-gray-700 border border-gray-700 py-2 px-7 font-semibold hover:text-white hover:bg-gray-700 transition-all duration-500'
+              className='inline-block border border-gray-700 py-2 px-7 font-semibold text-gray-700 transition-all duration-500 hover:bg-gray-700 hover:text-white'
               href='/'
               onClick={(e) => {
                 e.preventDefault();
-                setPage(pages.contact);
+                setModal(true);
+                // setPage(pages.contact);
               }}>
               contacto
             </a>

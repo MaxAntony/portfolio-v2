@@ -4,12 +4,15 @@ import './index.css';
 import { App } from './App';
 import reportWebVitals from './reportWebVitals';
 import ReactGA from 'react-ga4';
+import { RecoilRoot } from 'recoil';
 
 ReactGA.initialize('G-9J0KSPF52B');
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <RecoilRoot>
+      <App />
+    </RecoilRoot>
   </React.StrictMode>,
   document.getElementById('root'),
 );

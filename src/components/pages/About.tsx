@@ -7,7 +7,7 @@ const ServicesList = () => {
   return (
     <ul className='text-fontsoft'>
       {services.map((service) => (
-        <li key={service} className='flex items-center mb-2'>
+        <li key={service} className='mb-2 flex items-center'>
           <AiFillCaretRight />
           <p className='ml-6 '>{service}</p>
         </li>

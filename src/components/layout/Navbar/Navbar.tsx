@@ -1,7 +1,7 @@
 import { Copyright } from '@common/Copyright';
 import { SocialLinks } from '@common/SocialLinks';
-import { useGlobalContext } from '@root/App';
 import { image, pages, pagesSpanish } from '@root/data';
+import { useGlobalContext } from '@root/state/context/state.context';
 import { Fragment, useState } from 'react';
 
 export const Navbar = () => {
@@ -18,7 +18,7 @@ export const Navbar = () => {
 
   return (
     <Fragment>
-      <div className='bg-white fixed flex items-center top-0 left-0 right-0 px-5 lg:px-16 h-14 lg:h-16 justify-end'>
+      <div className='fixed top-0 left-0 right-0 flex h-14 items-center justify-end bg-white px-5 lg:h-16 lg:px-16'>
         {/* <a href='/' className='flex items-center'>
           <img className='max-w-[100px] max-h-10' src={logoImg} alt='logo' />
         </a> */}
@@ -38,26 +38,26 @@ export const Navbar = () => {
           </ul>
         </div>
         <button
-          className='lg:hidden cursor-pointer w-[30px] h-[24px] flex flex-col items-center'
+          className='flex h-[24px] w-[30px] cursor-pointer flex-col items-center lg:hidden'
           onClick={() => setMenuOpen((v) => !v)}>
           <div
-            className={`w-[30px] h-[2px] mb-[8px] bg-black rounded transition-transform ${
+            className={`mb-[8px] h-[2px] w-[30px] rounded bg-black transition-transform ${
               menuOpen && 'translate-y-[10px] rotate-45'
             }`}></div>
           <div
-            className={`w-[30px] h-[2px] mb-[8px] bg-black rounded transition-all ${menuOpen && 'opacity-0'} `}></div>
+            className={`mb-[8px] h-[2px] w-[30px] rounded bg-black transition-all ${menuOpen && 'opacity-0'} `}></div>
           <div
-            className={`w-[30px] h-[2px] bg-black rounded transition-transform ${
+            className={`h-[2px] w-[30px] rounded bg-black transition-transform ${
               menuOpen && '-translate-y-[10px] -rotate-45'
             }`}></div>
         </button>
       </div>
       {/* MOVIL */}
       <div
-        className={`bg-white pt-20 px-5 flex flex-col items-end fixed w-48 top-14 lg:top-16 h-screen transition-all z-20 border-l ${
+        className={`fixed top-14 z-20 flex h-screen w-48 flex-col items-end border-l bg-white px-5 pt-20 transition-all lg:top-16 ${
           menuOpen ? 'right-0' : '-right-48'
         }`}>
-        <img src={image} alt='avatar' className='w-20 h-20 object-cover mb-14' />
+        <img src={image} alt='avatar' className='mb-14 h-20 w-20 object-cover' />
         <ul className='mb-14'>
           {pagesSpanish.map(({ name, path }) => (
             <li key={path} className='mb-4 cursor-pointer' onClick={changePage(path)}>
@@ -65,7 +65,7 @@ export const Navbar = () => {
             </li>
           ))}
         </ul>
-        <div className='flex w-full justify-between mb-2'>
+        <div className='mb-2 flex w-full justify-between'>
           <SocialLinks />
         </div>
         <div>

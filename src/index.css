@@ -14,7 +14,6 @@ body::-webkit-scrollbar {
 
 body {
   -webkit-tap-highlight-color: transparent;
-  font-family: 'Poppins', sans-serif;
   background-color: #f6fbff;
   color: #333;
   width: 100%;

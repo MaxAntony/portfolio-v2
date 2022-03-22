@@ -15,9 +15,9 @@ export const Pages = () => {
   ];
 
   return (
-    <div className=' absolute left-0 right-0 top-14 bottom-0 lg:top-16 lg:bottom-16 lg:left-16 lg:right-16  overflow-hidden'>
+    <div className='absolute left-0 right-0 top-14 bottom-0 overflow-hidden lg:top-16 lg:bottom-16 lg:left-16  lg:right-16'>
       <div
-        className='absolute top-0 bottom-0 left-0 w-2/5 bg-cover bg-center bg-no-repeat hidden lg:block grayscale hover:grayscale-0 transition duration-500'
+        className='absolute top-0 bottom-0 left-0 hidden w-2/5 bg-cover bg-center bg-no-repeat grayscale transition duration-500 hover:grayscale-0 lg:block'
         style={{
           backgroundImage: `url("${image}")`,
         }}></div>
