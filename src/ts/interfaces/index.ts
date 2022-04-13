@@ -1,6 +1,6 @@
 export type IModal = { images: string[]; description: string; technicalDescription: string; linkLive: string };
 
-export type IProyect = {
+export type IProject = {
   title: string;
   shortDescription: string;
   image: string;

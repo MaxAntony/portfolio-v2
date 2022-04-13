@@ -1,4 +1,4 @@
-import { IProyect } from '@ts/interfaces';
+import { IProject } from '@ts/interfaces';
 
 export const menuSections = [];
 
@@ -30,7 +30,7 @@ export enum links {
   phone = 'tel:+51997286267',
 }
 
-export const proyects: IProyect[] = [
+export const projects: IProject[] = [
   {
     title: 'CompuGaming Store',
     shortDescription:
