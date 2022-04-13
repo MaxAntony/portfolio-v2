@@ -8,7 +8,7 @@ import { useRecoilState } from 'recoil';
 type ProyectProps = { proyect: IProyect };
 const Proyect: VFC<ProyectProps> = ({ proyect }) => {
   // para mejorar https://jsfiddle.net/ch9ukp3v/
-  const [_, setModal] = useRecoilState(modalState);
+  const [, setModal] = useRecoilState(modalState);
   return (
     <div className='group mb-24'>
       <div className='grid grid-cols-11 items-center gap-2'>
@@ -17,13 +17,13 @@ const Proyect: VFC<ProyectProps> = ({ proyect }) => {
           style={{ backgroundImage: `url(${proyect.image})` }}
         />
         <div className='z-10 col-start-1 col-end-12 lg:col-start-1 lg:col-end-[7] lg:row-start-1 lg:row-end-[-1] lg:group-odd:col-start-7 lg:group-odd:col-end-[-1] lg:group-odd:text-right'>
-          <h5 className='mb-2 text-2xl font-bold text-gray-700'>{proyect.title}</h5>
+          <h5 className='mb-2 rounded bg-background text-2xl font-bold text-gray-700'>{proyect.title}</h5>
           <div className='mb-8 cursor-pointer rounded bg-white p-4 text-fontsoft shadow-md hover:bg-gray-50'>
-            <p>{proyect.description}</p>
+            <p>{proyect.shortDescription}</p>
           </div>
           <button
-            className='border-2 border-gray-700 p-2 transition duration-300 hover:bg-gray-700 hover:text-white'
-            onClick={() => setModal(true)}>
+            className='hidden border-2 border-gray-700 p-2 transition duration-300 hover:bg-gray-700 hover:text-white'
+            onClick={() => setModal({ open: true, content: proyect.modal, title: proyect.title })}>
             ver mas
           </button>
         </div>

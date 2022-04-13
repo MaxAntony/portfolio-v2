@@ -9,6 +9,7 @@ module.exports = {
       },
       colors: {
         fontsoft: '#7d7789',
+        background: '#f6fbff',
       },
     },
   },

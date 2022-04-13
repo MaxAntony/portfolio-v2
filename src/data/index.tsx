@@ -1,4 +1,3 @@
-import { imgCompugaming } from '@images/proyects';
 import { IProyect } from '@ts/interfaces';
 
 export const menuSections = [];
@@ -34,20 +33,27 @@ export enum links {
 export const proyects: IProyect[] = [
   {
     title: 'CompuGaming Store',
-    description:
+    shortDescription:
       'sistema de ventas que consta de una tienda virtual, pagina de presentacion, panel administrativo y aplicativo movil para la administracion de productos',
-    image: imgCompugaming,
+    image: 'https://res.cloudinary.com/maxantony/image/upload/v1647926283/portfolio/compugaming-old.proyect_lcugbj.png',
+    modal: { description: '', images: [], linkLive: '', technicalDescription: '' },
   },
   {
     title: 'Stora',
-    description:
+    shortDescription:
       'Sistema de ventas compuesto por tienda virtual, panel administrativo y punto de venta con conexion a sunat para la emision de comprobantes electronicos',
-    image: imgCompugaming,
+    image:
+      'https://res.cloudinary.com/maxantony/image/upload/v1648833688/portfolio/Screenshot_from_2022-04-01_12-19-52_bstsvv.png',
+    modal: { description: '', images: [], linkLive: '', technicalDescription: '' },
   },
   {
     title: 'Simple Store',
-    description:
+    shortDescription:
       'Tienda virtual en la que se pueden subir productos mediante un archivo excel y aplicativo movil de instalacion directa',
-    image: imgCompugaming,
+    image:
+      'https://res.cloudinary.com/maxantony/image/upload/v1648833825/portfolio/Screenshot_from_2022-04-01_12-23-30_y9afmd.png',
+    modal: { description: '', images: [], linkLive: '', technicalDescription: '' },
   },
 ];
+
+export const proyectsModal = [{}];

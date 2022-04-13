@@ -26,18 +26,18 @@ export function App() {
 
   return (
     <GlobalContext.Provider value={{ page, setPage }}>
-      <div className='font-poppins'>
+      <div className='h-screen w-screen bg-background font-poppins'>
         <Layout>
           <Pages />
         </Layout>
         <Modal
-          title='tutolo de ejemplo'
+          title={isModalOpen.title}
           onClose={() => {
-            setIsModalOpen(false);
+            setIsModalOpen((modal) => ({ ...modal, open: false }));
           }}
-          open={isModalOpen}>
-          hola
-        </Modal>
+          open={isModalOpen.open}
+          modalData={isModalOpen.content}
+        />
       </div>
     </GlobalContext.Provider>
   );
