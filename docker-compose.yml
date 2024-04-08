@@ -1,0 +1,5 @@
+services:
+  server:
+    image: fixadigital/portfolio
+    ports:
+      - "4999:80"
